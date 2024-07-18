@@ -9,6 +9,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MainComponent } from './main/main.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

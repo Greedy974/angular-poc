@@ -1,0 +1,221 @@
+.status {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 12px;
+    gap: 8px;
+    border-radius: 90px;
+    box-shadow: 0px 1px 1px 0px #5C74780F;
+    background: linear-gradient(0deg, rgba(24, 180, 110, 0.1), rgba(24, 180, 110, 0.1)), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    color: #18B46E;
+    
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+
+    &.blue {
+      border: 0.5px solid #FFFFFF;
+      color: #1892B4;
+      background: linear-gradient(0deg, rgba(24, 180, 110, 0.1), rgba(24, 180, 110, 0.1)), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+      margin-left: 0;
+  
+    }
+  }
+
+.info-card-container {
+    height: fit-content;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    padding: 16px;
+    box-shadow: 0px 1px 1px 0px #5C747814, 0px 2px 1px 0px #5C74780F, 0px 1px 3px 0px #5C74781A;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #E4E8E9;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+      
+      .patient-details {
+        display: flex;
+        justify-content: space-between;
+        .icon-container {
+          display: flex;
+          justify-content: center; 
+          align-items: baseline;
+          height: 50px;
+          width: 50px;
+          .round-icon {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #1892B4;
+            color: #1892B4;
+            background: linear-gradient(0deg, rgba(24, 146, 180, 0.1), rgba(24, 146, 180, 0.1)), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+            box-shadow: 0px 1px 1px 0px #5C74780F;
+          }
+            
+        }
+        
+        .patient-id {
+          font-size: 24px;
+          font-weight: bold;
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+
+          @media (max-width: 600px) {
+            display: block;
+          }
+          .patient-name {
+            font-family: Ubuntu;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            text-align: left;
+            color: #000000;
+            .patient-age {
+                font-family: Open Sans;
+                font-weight: 400;
+                margin-left: 8px;
+            }
+          }
+          .patient-info {
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            text-align: left;
+
+            @media (max-width: 600px) {
+               display: none;
+              }
+          }
+
+          .icon {
+            font-size: 30px;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .patient-info-option {
+        display: none;
+        @media (max-width: 600px) {
+            display: block;
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            text-align: left;
+            .sex-info {
+                display: inline-block;
+                width: 100%;
+            }
+          }
+      }
+
+      .account-status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+    }
+    
+    .contact-info {
+      display: flex;
+      gap: 100px;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .contact-part{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .info-patient {
+          display: flex;
+          align-items: center;
+
+          @media (max-width: 600px) {
+            justify-content: space-between;
+           }
+
+          .lbl-info {
+            min-width: 150px;
+            font-family: Open Sans;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 18px;
+            text-align: left;
+            color: #5C7478;
+            @media (max-width: 600px) {
+                min-width: none;
+               }
+          }
+
+          .value-info-tel {
+            font-family: Ubuntu;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 19.5px;
+            text-align: left;
+            color: #1892B4;
+          }
+
+          .value-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 21px;
+            text-align: left;
+            color: #18B46E;
+
+            @media (max-width: 600px) {
+                white-space: nowrap;
+               }
+          }
+
+          .value-info-default {
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            text-align: center;
+            color: #000000;
+
+            fa-icon {
+              color :#1892B4;
+              margin-right: 4px;
+            }
+          }
+        }
+        @media (max-width: 600px) {
+          &.bottom {
+            border-bottom: 1px solid #E4E8E9;
+            padding-bottom: 8px; 
+          }
+          &.top {
+            padding-top: 8px;
+          }
+        }
+      }
+    }
+}

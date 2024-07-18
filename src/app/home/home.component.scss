@@ -1,231 +1,68 @@
-.status {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 12px;
-  gap: 8px;
-  border-radius: 90px;
-  margin-left: 10px;
-  box-shadow: 0px 1px 1px 0px #5C74780F;
-  background: linear-gradient(0deg, rgba(24, 180, 110, 0.1), rgba(24, 180, 110, 0.1)), linear-gradient(0deg, #FFFFFF, #FFFFFF);
-  color: #18B46E;
-
-  &.blue {
-    border: 0.5px solid #FFFFFF;
-    color: #1892B4;
-    background: linear-gradient(0deg, rgba(24, 180, 110, 0.1), rgba(24, 180, 110, 0.1)), linear-gradient(0deg, #FFFFFF, #FFFFFF);
-    margin-left: 0;
-
-  }
-}
-
 .home-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #FAF9F7;
-    
-    .info-card-container {
-        height: fit-content;
-        border-radius: 8px;
-        background-color: #FFFFFF;
-        padding: 16px;
-        box-shadow: 0px 1px 1px 0px #5C747814, 0px 2px 1px 0px #5C74780F, 0px 1px 3px 0px #5C74781A;
-    }
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #FAF9F7;
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #E4E8E9;
-      padding-bottom: 10px;
+  @media (max-width: 600px) {
+    margin: 15px 16px;
+    padding: 0;
+  }
+
+  uniq-card {
+    flex: 1;
+    width: 100%;
+  }
+
+  .loading-error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    
+    img {
       margin-bottom: 20px;
-
-      @media (max-width: 600px) {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 8px;
-      }
-      
-      .patient-details {
-        display: flex;
-        justify-content: space-between;
-        .icon-container {
-          display: flex;
-          justify-content: center; 
-          align-items: baseline;
-          height: 50px;
-          width: 50px;
-          .round-icon {
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 1px solid #1892B4;
-            color: #1892B4;
-            background: linear-gradient(0deg, rgba(24, 146, 180, 0.1), rgba(24, 146, 180, 0.1)), linear-gradient(0deg, #FFFFFF, #FFFFFF);
-            box-shadow: 0px 1px 1px 0px #5C74780F;
-          }
-            
-        }
-        
-        .patient-id {
-          font-size: 24px;
-          font-weight: bold;
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
-          .patient-name {
-            font-family: Ubuntu;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 24px;
-            text-align: left;
-            color: #000000;
-            .patient-age {
-                font-family: Open Sans;
-                font-weight: 400;
-                margin-left: 8px;
-            }
-          }
-          .patient-info {
-            font-family: Open Sans;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 21px;
-            text-align: left;
-          }
-
-          .icon {
-            font-size: 30px;
-            margin-right: 10px;
-          }
-        }
-      }
-
-      .account-status {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-      }
     }
     
-    .contact-info {
-      display: flex;
-      gap: 100px;
-
-      @media (max-width: 600px) {
-        flex-direction: column;
-        gap: 0;
-      }
-
-      .contact-part{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        .info-patient {
-          display: flex;
-          align-items: center;
-
-          .lbl-info {
-            min-width: 150px;
-            font-family: Open Sans;
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 18px;
-            text-align: left;
-            color: #5C7478;
-          }
-
-          .value-info-tel {
-            font-family: Ubuntu;
-            font-size: 13px;
-            font-weight: 500;
-            line-height: 19.5px;
-            text-align: left;
-            color: #1892B4;
-          }
-
-          .value-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: Open Sans;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 21px;
-            text-align: left;
-            color: #18B46E;
-          }
-
-          .value-info-default {
-            font-family: Open Sans;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 21px;
-            text-align: center;
-            color: #000000;
-
-            fa-icon {
-              color :#1892B4;
-              margin-right: 4px;
-            }
-          }
-        }
-        @media (max-width: 600px) {
-          &.bottom {
-            border-bottom: 1px solid #E4E8E9;
-            padding-bottom: 8px; 
-          }
-          &.top {
-            padding-top: 8px;
-          }
-        }
-      }
-    }
-    
-    .loading-error-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .error-message {
+      color: #B3182A;
+      margin-bottom: 0;
+      font-family: Ubuntu;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 24px;
       text-align: center;
-      margin-top: 50px;
+
+    }
+    
+    .error-description {
+      font-family: Open Sans;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 19.5px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .error-suggestions {
+      text-align: left;
+      margin: 0 auto;
       
-      img {
-        margin-bottom: 20px;
-      }
-      
-      .error-message {
-        font-size: 18px;
+      p {
         font-weight: bold;
-        color: #dc3545;
+        margin-bottom: 10px;
       }
       
-      .error-description {
-        font-size: 14px;
-        color: #666;
-        margin-bottom: 20px;
-      }
-      
-      .error-suggestions {
-        text-align: left;
-        margin: 0 auto;
-        
-        p {
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-        
-        ol {
-          padding-left: 20px;
-          li {
-            margin-bottom: 5px;
-          }
+      ol {
+        padding-left: 20px;
+        li {
+          margin-bottom: 5px;
         }
       }
     }
+  }
   }
   

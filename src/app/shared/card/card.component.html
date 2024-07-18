@@ -1,0 +1,48 @@
+<div class="info-card-container" *ngIf="data">
+    <div class="header">
+      <div class="patient-details">
+        <div class="icon-container">
+          <fa-icon class="round-icon" [icon]="['far', 'user']"></fa-icon> 
+        </div>
+        <div class="patient-id">
+            <span class="patient-name">{{ data.firstName }} {{ data.lastName }}<span class="patient-age">{{ data.age }} ans</span></span>
+            <div class="patient-info">Né-e le 14/07/1980, de sexe {{ data.sex === 'MALE' ? 'masculin' : 'feminin' }}, cisgenre</div>
+        </div>
+      </div>
+      <div class="patient-info-option">Né-e le 14/07/1980, <span class="sex-info">de sexe {{ data.sex === 'MALE' ? 'masculin' : 'feminin' }}, cisgenre</span></div>
+      <div class="account-status">
+        <span class="status"><fa-icon [icon]="['far', 'user']"></fa-icon><span>Compte activé</span></span>
+        <span class="status"><fa-icon [icon]="['far', 'id-card']"></fa-icon><span>Identité validée</span></span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <div class="contact-part bottom">
+        <div class="info-patient">
+          <span class="lbl-info">Téléphone patient-e :</span>
+          <span class="value-info-tel">{{ data.phone }}</span>
+        </div>
+        <div class="info-patient">
+          <span class="lbl-info">Praticien-ne référent-e :</span>
+          <span class="value-info"><fa-icon [icon]="['fas', 'user-doctor']"></fa-icon>{{ data.referringPractitionerFirstName }} {{ data.referringPractitionerLastName | uppercase }}</span>
+        </div>
+        <div class="info-patient">
+          <span class="lbl-info">Médecin référent-e :</span>
+          <span class="value-info"><fa-icon [icon]="['fas', 'user-doctor']"></fa-icon>{{ data.referringDoctorFirstName }} {{ data.referringDoctorLastName | uppercase }}</span>
+        </div>
+      </div>
+      <div class="contact-part top">
+        <div class="info-patient">
+          <span class="lbl-info">Protocole en cours :</span>
+          <span class="status blue">{{ data.protocol | uppercase }}</span>
+        </div>
+        <div class="info-patient">
+          <span class="lbl-info">Pathologie :</span>
+          <span class="value-info-default"><fa-icon [icon]="['fas', 'circle-nodes']"></fa-icon>{{ data.pathology }}</span>
+        </div>
+        <div class="info-patient">
+          <span class="lbl-info">Date de début :</span>
+          <span class="value-info-default">{{ data.protocolStartDate }}</span>
+        </div>
+      </div>
+    </div>
+</div>
