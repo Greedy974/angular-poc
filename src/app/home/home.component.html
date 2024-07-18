@@ -1,0 +1,65 @@
+<div class="home-container">
+    <div class="info-card-container">
+        <div class="header">
+          <div class="patient-details">
+            <div class="icon-container">
+              <fa-icon class="round-icon" [icon]="['far', 'user']"></fa-icon> 
+            </div>
+            <div class="patient-id">
+                <span class="patient-name">{{ patient.firstName }} {{ patient.lastName }}<span class="patient-age">{{ patient.age }} ans</span></span>
+                <div class="patient-info">Né-e le 14/07/1980, de sexe masculin, cisgenre</div>
+            </div>
+          </div>
+          <div class="account-status">
+            <span class="status"><fa-icon [icon]="['far', 'user']"></fa-icon><span>Compte activé</span></span>
+            <span class="status"><fa-icon [icon]="['far', 'id-card']"></fa-icon><span>Identité validée</span></span>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-part bottom">
+            <div class="info-patient">
+              <span class="lbl-info">Téléphone patient-e :</span>
+              <span class="value-info-tel">{{ patient.phone }}</span>
+            </div>
+            <div class="info-patient">
+              <span class="lbl-info">Praticien-ne référent-e :</span>
+              <span class="value-info"><fa-icon [icon]="['fas', 'user-doctor']"></fa-icon>{{ patient.referringPractitionerFirstName }} {{ patient.referringPractitionerLastName | uppercase }}</span>
+            </div>
+            <div class="info-patient">
+              <span class="lbl-info">Médecin référent-e :</span>
+              <span class="value-info"><fa-icon [icon]="['fas', 'user-doctor']"></fa-icon>{{ patient.referringDoctorFirstName }} {{ patient.referringDoctorLastName | uppercase }}</span>
+            </div>
+          </div>
+          <div class="contact-part top">
+            <div class="info-patient">
+              <span class="lbl-info">Protocole en cours :</span>
+              <span class="status blue">{{ patient.protocol | uppercase }}</span>
+            </div>
+            <div class="info-patient">
+              <span class="lbl-info">Pathologie :</span>
+              <span class="value-info-default"><fa-icon [icon]="['fas', 'circle-nodes']"></fa-icon>{{ patient.pathology }}</span>
+            </div>
+            <div class="info-patient">
+              <span class="lbl-info">Date de début :</span>
+              <span class="value-info-default">{{ patient.protocolStartDate }}</span>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    
+    <div class="loading-error-container">
+      <div class="error-message">Problème de chargement</div>
+      <div class="error-description">Lorem ipsum dolor sit amet</div>
+      <img src="/assets/amico.svg" alt="Erreur de chargement">
+      <div class="error-suggestions">
+        <p>Que pouvez-vous faire ?</p>
+        <ol>
+          <li>Assurez-vous que vous êtes bien connecté-e à internet</li>
+          <li>Vider le cache de votre navigateur et recharger la page</li>
+          <li>Si le problème persiste, contactez le support</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  
